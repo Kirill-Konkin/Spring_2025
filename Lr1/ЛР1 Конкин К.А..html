@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Длина самого короткого слова</title>
+</head>
+<body>
+
+  <h1>Определение длины самого короткого слова</h1>
+
+  <label for="inputText">Введите текст:</label><br>
+  <textarea id="inputText" rows="4" cols="50"></textarea><br><br>
+
+  <button onclick="findShortestLength()">Найти длину</button><br><br>
+
+  <label for="result">Длина самого короткого слова:</label>
+  <input type="text" id="result" readonly><br>
+  <div id="error-message" style="color: red;"></div>
+
+  <script>
+    function findShortestLength() {
+      const text = document.getElementById("inputText").value;
+      const resultInput = document.getElementById("result");
+      const errorMessageDiv = document.getElementById("error-message");
+
+      errorMessageDiv.textContent = ""; // Очищаем сообщение об ошибке
+
+      if (!text) {
+        errorMessageDiv.textContent = "Пожалуйста, введите текст.";
+        resultInput.value = "";
+        return;
+      }
+
+      const words = text.split(/\s+/); // Разделяем по пробелам (и другим whitespace символам)
+      if (words.length === 0 || (words.length === 1 && words[0] === '')) {
+        errorMessageDiv.textContent = "Текст не содержит слов.";
+        resultInput.value = "";
+        return;
+      }
+
+      let minLength = words[0].length;
+
+      for (let i = 1; i < words.length; i++) {
+        if (words[i].length < minLength) {
+          minLength = words[i].length;
+        }
+      }
+
+      resultInput.value = minLength;
+    }
+  </script>
+
+</body>
+</html>

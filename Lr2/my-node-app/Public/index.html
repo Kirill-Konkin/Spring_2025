@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адресная книга сотрудников</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Адресная книга сотрудников</h1>
+        <nav>
+            <button id="createBtn"><i class="fas fa-user-plus"></i> Создать сотрудника</button>
+            <button id="viewBtn"><i class="fas fa-address-book"></i> Просмотр адресной книги</button>
+            <input type="text" id="search" placeholder="Поиск по фамилии..." />
+        </nav>
+        
+        <div id="createEmployee" class="form-container hidden">
+            <h2>Добавить сотрудника</h2>
+            <form id="employeeForm">
+                <input type="text" placeholder="Фамилия" required>
+                <input type="text" placeholder="Имя" required>
+                <input type="text" placeholder="Отчество">
+                <input type="text" placeholder="Должность" required>
+                <input type="text" placeholder="Подразделение" required>
+                <input type="text" placeholder="Организация" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="tel" placeholder="Контактный номер" required>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        
+        <div id="employeeList" class="form-container hidden">
+            <h2>Список сотрудников</h2>
+            <ul id="list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

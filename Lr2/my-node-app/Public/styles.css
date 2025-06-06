@@ -1,0 +1,146 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background:url(https://www.cjoint.com/doc/20_09/JInlneDNT5Z_texture.jpg) no-repeat center center fixed; /* Гладкий градиент с изображением */
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    color: #333; 
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85); /* Прозрачный фон с белым */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease; /* Анимация для контейнера */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #000002; /* Яркий цвет заголовка */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Тень для заголовка */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #28a745, #85e3b5); /* Градиент для кнопки */
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s; /* Плавные трансформации */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для кнопок */
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #218838, #6fdb91); /* Темный градиент при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container {
+    margin-top: 20px;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.9);
+    animation: fadeIn 0.5s; /* Анимация для формы */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход цвета */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #ff6f61; /* Яркий цвет рамки при фокусе */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5); /* Эффект тени при фокусе */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px; 
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    background-color: rgba(255, 255, 255, 0.9); 
+    transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+li:hover {
+    transform: translateY(-2px); /* Легкое поднятие элемента списка при наведении */
+}
+
+button.delete-button {
+    margin-left: 10px;
+    background: linear-gradient(90deg, #dc3545, #f38c8c); /* Градиент для кнопки удаления */
+    transition: background-color 0.3s ease; 
+}
+
+button.delete-button:hover {
+    background: linear-gradient(90deg, #c82333, #f17777); /* Темный градиент кнопки удаления при наведении */
+}
+
+/* Дополнительные анимации для кнопок */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+button:active {
+    animation: bounce 0.2s;
+}
